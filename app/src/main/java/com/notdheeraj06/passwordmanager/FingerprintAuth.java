@@ -3,42 +3,44 @@ package com.notdheeraj06.passwordmanager;
 import static androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG;
 import static androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.provider.Settings;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
-
 import java.io.File;
 import java.util.concurrent.Executor;
 
+/** @noinspection ALL*/
 public class FingerprintAuth extends AppCompatActivity {
 
 
     private static final int REQUEST_CODE = 5103;
     ImageView fingerprint_login;
 
-    private Executor executor;
     private BiometricPrompt biometricPrompt;
     private BiometricPrompt.PromptInfo promptInfo;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fingerprint_auth);
 
 
-        fingerprint_login = (ImageView) findViewById(R.id.fingerprint);
+        fingerprint_login = findViewById(R.id.fingerprint);
 
         BiometricManager biometricManager = BiometricManager.from(this);
         switch (biometricManager.canAuthenticate(BIOMETRIC_STRONG | DEVICE_CREDENTIAL)) {
@@ -58,9 +60,13 @@ public class FingerprintAuth extends AppCompatActivity {
                         BIOMETRIC_STRONG | DEVICE_CREDENTIAL);
                 startActivityForResult(enrollIntent, REQUEST_CODE);
                 break;
+            case BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED:
+            case BiometricManager.BIOMETRIC_ERROR_UNSUPPORTED:
+            case BiometricManager.BIOMETRIC_STATUS_UNKNOWN:
+                break;
         }
 
-            executor = ContextCompat.getMainExecutor(this);
+        Executor executor = ContextCompat.getMainExecutor(this);
             biometricPrompt = new BiometricPrompt(FingerprintAuth.this,
                     executor, new BiometricPrompt.AuthenticationCallback() {
                 @Override
@@ -78,7 +84,7 @@ public class FingerprintAuth extends AppCompatActivity {
                     super.onAuthenticationSucceeded(result);
                     Toast.makeText(getApplicationContext(),
                             "Authentication succeeded!", Toast.LENGTH_SHORT).show();
-                    File f = new File(
+                    @SuppressLint("SdCardPath") File f = new File(
                             "/data/data/com.notdheeraj06.passwordmanager/shared_prefs/com.notdheeraj06.passwordmanager_preferences.xml");
                     if (f.exists()){
                         startActivity(new Intent(FingerprintAuth.this,PINVerification.class));
@@ -110,12 +116,7 @@ public class FingerprintAuth extends AppCompatActivity {
                 .build();
 
         initiate_fingerprintauth();
-        fingerprint_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                biometricPrompt.authenticate(promptInfo);
-            }
-        });
+        fingerprint_login.setOnClickListener(view -> biometricPrompt.authenticate(promptInfo));
 
 
 

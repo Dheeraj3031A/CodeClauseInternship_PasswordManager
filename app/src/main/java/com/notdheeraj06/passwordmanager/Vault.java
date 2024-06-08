@@ -22,6 +22,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/** @noinspection ALL*/
 public class Vault extends AppCompatActivity {
     TextView t1,t2;
     FloatingActionButton add_new;
@@ -37,9 +38,9 @@ public class Vault extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vault);
 
-        t1 = (TextView)findViewById(R.id.textView4);
-        t2 = (TextView)findViewById(R.id.textView8);
-        add_new = (FloatingActionButton) findViewById(R.id.add_more);
+        t1 = findViewById(R.id.textView4);
+        t2 = findViewById(R.id.textView8);
+        add_new = findViewById(R.id.add_more);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         userDataList = new ArrayList<>();
 
