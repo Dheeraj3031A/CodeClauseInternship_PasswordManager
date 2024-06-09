@@ -7,6 +7,9 @@ The Password Manager is an Android application developed in Java that allows you
 - AES encryption to protect password data.
 - Biometric authentication for added security.
 
+# Downloads
+- Password Manager: [Download]()
+
 # Acknowledgments
 
 The Password Manager Android application utilizes the following open-source libraries:
