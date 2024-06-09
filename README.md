@@ -8,7 +8,7 @@ The Password Manager is an Android application developed in Java that allows you
 - Biometric authentication for added security.
 
 # Downloads
-- Password Manager: [Download]()
+- Password Manager: [Download](https://github.com/Dheeraj3031A/CodeClauseInternship_PasswordManager/releases)
 
 # Acknowledgments
 
