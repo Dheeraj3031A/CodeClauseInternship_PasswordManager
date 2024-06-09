@@ -15,7 +15,7 @@
         android:fontFamily="sans-serif-medium"
         android:text="Edit Password"
         android:textColor="?attr/colorPrimary"
-        android:textSize="23dp"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

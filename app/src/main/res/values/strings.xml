@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Password Manager</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="enter_pin_for_authentication">Enter PIN for Authentication</string>
 </resources>

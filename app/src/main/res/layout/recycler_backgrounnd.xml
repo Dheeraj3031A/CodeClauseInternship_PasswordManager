@@ -13,13 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:clickable="true"
+        android:contentDescription="TODO"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/edit"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.87"
-        app:srcCompat="@drawable/ic_baseline_delete_24" />
+        app:srcCompat="@drawable/ic_baseline_delete_24"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -29,14 +32,15 @@
         android:layout_marginEnd="5dp"
         android:fontFamily="sans-serif"
         android:text="your credentials"
-        android:textColor="@color/white"
-        android:textSize="16dp"
+        android:textColor="#5E35B1"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,7 +53,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_admin_panel_settings_24" />
+        app:srcCompat="@drawable/ic_baseline_admin_panel_settings_24"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <TextView
         android:id="@+id/label"
@@ -57,13 +62,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="Main Text"
-        android:textColor="@color/white"
-        android:textSize="23dp"
+        android:textColor="#546E7A"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.13"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView3"
@@ -74,14 +80,15 @@
         android:layout_marginEnd="5dp"
         android:fontFamily="sans-serif"
         android:text="Clicked on the copy icon to copy"
-        android:textColor="@color/white"
-        android:textSize="16dp"
+        android:textColor="#5E35B1"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/label"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/copy"
@@ -89,13 +96,16 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         android:clickable="true"
+        android:focusable="true"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.87"
-        app:srcCompat="@drawable/ic_baseline_content_copy_24" />
+        app:srcCompat="@drawable/ic_baseline_content_copy_24"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/edit"
@@ -103,12 +113,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/copy"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.87"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

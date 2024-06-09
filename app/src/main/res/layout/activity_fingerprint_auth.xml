@@ -27,11 +27,13 @@
         android:layout_width="153dp"
         android:layout_height="144dp"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_fingerprint_24" />
+        app:srcCompat="@drawable/ic_baseline_fingerprint_24"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView2"
@@ -40,10 +42,11 @@
         android:fontFamily="sans-serif-medium"
         android:text="Biometric Authentication"
         android:textColor="?attr/colorPrimary"
-        android:textSize="23dp"
+        android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/fingerprint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintVertical_bias="0.63"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
