@@ -99,7 +99,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Set PIN for Authentication"
+        android:text="@string/set_pin_for_authentication"
         android:textColor="?attr/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
