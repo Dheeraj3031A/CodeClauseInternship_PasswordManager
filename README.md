@@ -18,3 +18,8 @@ The Password Manager Android application utilizes the following open-source libr
 ## Disclaimer
 
 The Password Manager Android application is intended for personal use and does not guarantee absolute security of your passwords. It is always recommended to use additional security measures and follow best practices to protect your sensitive information.
+
+## Future of this Application (Currently Working on these features!)
+- Adding Cloud Sync
+- Importing and Exporting Passwords
+- and many more
